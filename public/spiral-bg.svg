@@ -1,0 +1,43 @@
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <path d="M400 400 
+           M400 400 L420 400
+           M400 400 L419 410
+           M400 400 L417 420
+           M400 400 L414 429
+           M400 400 L409 437
+           M400 400 L403 444
+           M400 400 L397 450
+           M400 400 L390 455
+           M400 400 L382 458
+           M400 400 L375 460"
+        stroke="#ffffff" 
+        stroke-width="2" 
+        fill="none"
+        transform="rotate(0 400 400)"
+        stroke-opacity="0.4">
+    <animateTransform 
+      attributeName="transform" 
+      type="rotate" 
+      from="0 400 400" 
+      to="360 400 400" 
+      dur="60s" 
+      repeatCount="indefinite"/>
+  </path>
+  <!-- Add more spiral paths with different sizes -->
+  <path d="M400 400
+           M400 400 C450 350, 500 400, 450 450 C400 500, 350 450, 400 400"
+        stroke="#ffffff"
+        stroke-width="1.5"
+        fill="none"
+        transform="rotate(45 400 400)"
+        stroke-opacity="0.3">
+  </path>
+  <!-- Logarithmic spiral path -->
+  <path d="M400 400
+           M400 400 Q430 430, 450 400 Q470 370, 430 350 Q390 330, 380 380 Q370 430, 420 450 Q470 470, 480 410"
+        stroke="#ffffff"
+        stroke-width="1"
+        fill="none"
+        stroke-opacity="0.2">
+  </path>
+</svg>

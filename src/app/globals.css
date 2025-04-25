@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+/* DIN Font import - add the appropriate @font-face declaration */
+@font-face {
+  font-family: 'DIN';
+  src: url('/fonts/DIN.woff2') format('woff2'),
+       url('/fonts/DIN.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DIN';
+  src: url('/fonts/DIN-Bold.woff2') format('woff2'),
+       url('/fonts/DIN-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --gradient-dark-blue-start: #0F4C81;
+  --gradient-dark-blue-end: #001F3D;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--gradient-dark-blue-start);
+    --foreground: #ededed;
+  }
+}
+
+/* Fix for HTML and Body elements to ensure proper sizing */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Main body styling */
+body {
+  background: linear-gradient(135deg, var(--gradient-dark-blue-start), var(--gradient-dark-blue-end)) fixed;
+  color: var(--foreground);
+  font-family: 'DIN', Arial, sans-serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+/* Container for all page content */
+#__next, main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto; /* Grow to fill space but don't shrink */
+}
+
+/* Spiral animation in background */
+body::before {
+  content: '';
+  position: fixed; /* Changed from absolute to fixed */
+  top: 50%;
+  left: 50%;
+  width: 200vmax; /* Much larger than viewport */
+  height: 200vmax;
+  transform: translate(-50%, -50%); /* Center the element */
+  background-image: url('/gpt.svg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: -1;
+  animation: rotateSlow 60s linear infinite;
+  pointer-events: none; /* Make sure it doesn't interfere with clicking */
+  will-change: transform; /* Performance optimization */
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Make footer stick to bottom even with minimal content */
+footer {
+  margin-top: auto; /* Push footer to bottom when content is short */
+}
