@@ -9,7 +9,7 @@ We aim to empower businesses through cutting-edge technology solutions that enha
 ## Current Projects
 
 ### ClearWay
-Our pilot project currently in development, ClearWay, is a comprehensive project management solution designed to simplify workflow processes and enhance team collaboration. Stay tuned for more updates as we continue to build and refine this exciting new tool.
+Our pilot project currently in development, ClearWay, is a A web application for visualizing and analyzing corridor widths for emergency service vehicles (IZS - Integrated Rescue System). ClearWay helps emergency services assess route accessibility by visualizing corridor widths on a map. It supports different types of emergency vehicles.
 
 ---
 
